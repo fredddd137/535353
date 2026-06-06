@@ -9512,7 +9512,7 @@ function Alprazolam.new(Config : Window)
 		local ImageLabel = Instance.new("ImageLabel")
 
 		CloseWindow.Name = Alprazolam:_RandomString()
-		CloseWindow.Parent = Alprazolam
+		CloseWindow.Parent = WindowGui
 		CloseWindow.AnchorPoint = Vector2.new(1, 0)
 		CloseWindow.BackgroundColor3 = Alprazolam.Colors.BGDBColor
 
@@ -9586,7 +9586,7 @@ function Alprazolam.new(Config : Window)
 			local UIListLayout = Instance.new("UIListLayout")
 
 			Watermark.Name = Alprazolam:_RandomString()
-			Watermark.Parent = Alprazolam
+			Watermark.Parent = WindowGui
 			Watermark.AnchorPoint = Vector2.new(1, 0)
 			Watermark.BackgroundColor3 = Alprazolam.Colors.BGDBColor
 
