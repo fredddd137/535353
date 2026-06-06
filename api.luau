@@ -358,18 +358,18 @@ local Alprazolam = {
 };
 
 Alprazolam.Colors = {
-	Highlight = Color3.fromRGB(167, 139, 250),
-	Toggle = Color3.fromRGB(139, 92, 246),
-	Risky = Color3.fromRGB(251, 255, 39),
-	BGDBColor = Color3.fromRGB(22, 24, 29),
-	BlockColor = Color3.fromRGB(28, 29, 34),
-	StrokeColor = Color3.fromRGB(37, 38, 43),
+	Highlight = Color3.fromRGB(250, 139, 139),
+	Toggle = Color3.fromRGB(246, 92, 92),
+	Risky = Color3.fromRGB(255, 212, 39),
+	BGDBColor = Color3.fromRGB(29, 22, 22),
+	BlockColor = Color3.fromRGB(34, 28, 28),
+	StrokeColor = Color3.fromRGB(43, 37, 37),
 	SwitchColor = Color3.fromRGB(255, 255, 255),
-	DropColor = Color3.fromRGB(33, 35, 39),
-	MouseEnter = Color3.fromRGB(55, 58, 65),
-	BlockBackground = Color3.fromRGB(39, 40, 47),
+	DropColor = Color3.fromRGB(39, 33, 33),
+	MouseEnter = Color3.fromRGB(65, 55, 55),
+	BlockBackground = Color3.fromRGB(47, 39, 39),
 	LineColor = Color3.fromRGB(65, 65, 65),
-	HighStrokeColor = Color3.fromRGB(55, 56, 63),
+	HighStrokeColor = Color3.fromRGB(63, 55, 55),
 };
 
 Alprazolam.Elements = {
