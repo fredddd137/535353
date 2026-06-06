@@ -2554,6 +2554,62 @@ function Alprazolam:CacheImage(id: string) : string
 	return "";
 end;
 
+-- Pobiera obraz z zewnętrznego URL (np. https://i.imgur.com/xxx.png)
+-- i zwraca lokalny asset gotowy do użycia jako ImageLabel.Image.
+-- Wymaga środowiska executora z getcustomasset/getsynasset + writefile.
+function Alprazolam:LoadLogoFromUrl(url: string) : string
+	if not url or not url:byte() then return "" end;
+
+	-- Jeśli to już rbxassetid / rbxthumb – zwróć bez zmian
+	if string.find(url, "rbxassetid://", 1, true)
+		or string.find(url, "rbxthumb://", 1, true)
+		or string.find(url, "rbxhttp://", 1, true) then
+		return url;
+	end;
+
+	local getcustom = getcustomasset or getsynasset;
+	if not getcustom or not writefile or not game.HttpGet then
+		warn("[Alprazolam] LoadLogoFromUrl: executor nie obsługuje getcustomasset/writefile");
+		return url;
+	end;
+
+	-- Tworzymy unikalną nazwę pliku na podstawie URL
+	local hash = Alprazolam.Hash(url);
+
+	-- Katalog do cache – jeśli Security jest włączone użyj jego folderu,
+	-- w przeciwnym razie użyj "Alprazolam-Cache"
+	local dir = (Alprazolam.CacheDirectory) or "Alprazolam-Cache";
+
+	if not isfolder(dir) then
+		makefolder(dir);
+	end;
+
+	-- Wykrywamy rozszerzenie z URL (png/jpg/jpeg/webp), fallback → png
+	local ext = string.match(url, "%.(%a+)%??") or "png";
+	if ext ~= "png" and ext ~= "jpg" and ext ~= "jpeg" and ext ~= "webp" then
+		ext = "png";
+	end;
+
+	local cache_path = string.format("%s/logo-%s.%s", dir, hash, ext);
+
+	if isfile(cache_path) then
+		return getcustom(cache_path);
+	end;
+
+	local ok, data = pcall(function()
+		return game:HttpGet(url);
+	end);
+
+	if not ok or not data or #data == 0 then
+		warn("[Alprazolam] LoadLogoFromUrl: nie udało się pobrać " .. tostring(url));
+		return url;
+	end;
+
+	writefile(cache_path, data);
+
+	return getcustom(cache_path);
+end;
+
 function Alprazolam:PreloadIcons()
 	local RequiredAssets = {
 		"http://www.roblox.com/asset/?id=112554223509763",
