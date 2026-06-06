@@ -6516,6 +6516,7 @@ function Alprazolam.new(Config : Window)
 	WindowLabel.TextColor3 = Alprazolam.Colors.SwitchColor
 	WindowLabel.TextSize = Config.TextSize
 	WindowLabel.TextXAlignment = Enum.TextXAlignment.Left
+	WindowLabel.Visible = false
 
 	table.insert(Alprazolam.Elements.SwitchColor , {
 		Element = WindowLabel,
