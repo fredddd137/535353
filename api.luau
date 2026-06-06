@@ -1,18 +1,18 @@
-local ModernUI = {
+local Alprazolam = {
     Options = {},
-    Folder  = "ModernUI",
+    Folder  = "Alprazolam",
 }
 
-function ModernUI.GetService(service)
+function Alprazolam.GetService(service)
     return cloneref and cloneref(game:GetService(service)) or game:GetService(service)
 end
 
-local TweenService      = ModernUI.GetService("TweenService")
-local RunService        = ModernUI.GetService("RunService")
-local HttpService       = ModernUI.GetService("HttpService")
-local UserInputService  = ModernUI.GetService("UserInputService")
-local Players           = ModernUI.GetService("Players")
-local Lighting          = ModernUI.GetService("Lighting")
+local TweenService      = Alprazolam.GetService("TweenService")
+local RunService        = Alprazolam.GetService("RunService")
+local HttpService       = Alprazolam.GetService("HttpService")
+local UserInputService  = Alprazolam.GetService("UserInputService")
+local Players           = Alprazolam.GetService("Players")
+local Lighting          = Alprazolam.GetService("Lighting")
 
 local LocalPlayer   = Players.LocalPlayer
 local currentTab    = nil
@@ -33,7 +33,7 @@ local function GetGui()
     local parent = RunService:IsStudio() 
         and LocalPlayer:FindFirstChild("PlayerGui")
         or (gethui and gethui())
-        or ModernUI.GetService("CoreGui")
+        or Alprazolam.GetService("CoreGui")
     
     gui.Parent = parent
     return gui
@@ -43,10 +43,10 @@ local function Tween(instance, info, props)
     return TweenService:Create(instance, info, props)
 end
 
-function ModernUI:Window(Settings)
+function Alprazolam:Window(Settings)
     local WindowFunctions = { Settings = Settings }
     local gui = GetGui()
-    gui.Name = "ModernUI"
+    gui.Name = "Alprazolam"
     
     local main                      = Instance.new("Frame")
     main.Name                       = "Main"
@@ -1055,4 +1055,4 @@ function ModernUI:Window(Settings)
     return WindowFunctions
 end
 
-return ModernUI
+return Alprazolam
