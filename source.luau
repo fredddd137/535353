@@ -6697,10 +6697,6 @@ function Alprazolam.new(Config : Window)
 				ImageTransparency = 0
 			})
 
-			Alprazolam:_Animation(WindowLabel,TweenInfo.new(0.2),{
-				TextTransparency = 0
-			})
-
 			Alprazolam:_Animation(UserProfile,TweenInfo.new(0.2),{
 				ImageTransparency = 0
 			})
@@ -6743,10 +6739,6 @@ function Alprazolam.new(Config : Window)
 				ImageTransparency = 1
 			})
 
-			Alprazolam:_Animation(WindowLabel,TweenInfo.new(0.2),{
-				TextTransparency = 1
-			})
-
 			Alprazolam:_Animation(UserProfile,TweenInfo.new(0.2),{
 				ImageTransparency = 1
 			})
@@ -6777,11 +6769,6 @@ function Alprazolam.new(Config : Window)
 				Size = UDim2.new(0, 185,1, 0)
 			});
 
-			Alprazolam:_Animation(WindowLabel , Style , {
-				Position = UDim2.new(0, 60,0, 17),
-				TextTransparency = 0
-			});
-
 			Alprazolam:_Animation(UserText , Style , {
 				Position = UDim2.new(0, 55,0, 8),
 				TextTransparency = 0.1
@@ -6794,11 +6781,6 @@ function Alprazolam.new(Config : Window)
 		else
 			Alprazolam:_Animation(TabFrame , Style , {
 				Size = UDim2.new(0, 85,1, 0)
-			});
-
-			Alprazolam:_Animation(WindowLabel , Style , {
-				Position = UDim2.new(0, 60 + 25,0, 17),
-				TextTransparency = 1
 			});
 
 			Alprazolam:_Animation(UserText , Style , {
