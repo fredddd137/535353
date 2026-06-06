@@ -342,7 +342,7 @@ local CurrentCamera: Camera? = cloneref(workspace.CurrentCamera);
 
 local Alprazolam = {
 	Version = '1.0',
-	Logo = "rbxassetid://120245531583106",
+	Logo = "rbxassetid://71256351472040",
 	Windows = {},
 	Scale = {
 		Window = UDim2.new(0, 620,0, 480),
@@ -613,8 +613,8 @@ Alprazolam.Lucide = {
 	["lucide-coins"] = "rbxassetid://10709811110",
 	["lucide-columns"] = "rbxassetid://10709811261",
 	["lucide-command"] = "rbxassetid://10709811365",
-	["lucide-compass"] = "rbxassetid://10709811445",
-	["lucide-component"] = "rbxassetid://10709811595",
+	["lucide-Alprazolamass"] = "rbxassetid://10709811445",
+	["lucide-Alprazolamonent"] = "rbxassetid://10709811595",
 	["lucide-concierge-bell"] = "rbxassetid://10709811706",
 	["lucide-connection"] = "rbxassetid://10747361219",
 	["lucide-contact"] = "rbxassetid://10709811834",
@@ -798,7 +798,7 @@ Alprazolam.Lucide = {
 	["lucide-git-branch"] = "rbxassetid://10723396676",
 	["lucide-git-branch-plus"] = "rbxassetid://10723396542",
 	["lucide-git-commit"] = "rbxassetid://10723396812",
-	["lucide-git-compare"] = "rbxassetid://10723396954",
+	["lucide-git-Alprazolamare"] = "rbxassetid://10723396954",
 	["lucide-git-fork"] = "rbxassetid://10723397049",
 	["lucide-git-merge"] = "rbxassetid://10723397165",
 	["lucide-git-pull-request"] = "rbxassetid://10723397431",
@@ -1319,7 +1319,7 @@ Alprazolam.FontAwesome = {
 	['clipboard-check'] = "rbxassetid://118535733506457",
 	clock = "rbxassetid://98767608471295",
 	code = "rbxassetid://91882036126433",
-	['computer-mouse'] = "rbxassetid://114752565381440",
+	['Alprazolamuter-mouse'] = "rbxassetid://114752565381440",
 	cookie = "rbxassetid://101854685117513",
 	copy = "rbxassetid://76996819137437",
 	copyright = "rbxassetid://131736117717053",
@@ -2541,7 +2541,7 @@ function Alprazolam:CacheImage(id: string) : string
 		return HttpService:JSONDecode(json);
 	end));
 
-	if typeof(JSON_Decode) == "table" and JSON_Decode and JSON_Decode.data and JSON_Decode.data[1] and JSON_Decode.data[1].imageUrl and JSON_Decode.data[1].state == "Completed" then task.wait()
+	if typeof(JSON_Decode) == "table" and JSON_Decode and JSON_Decode.data and JSON_Decode.data[1] and JSON_Decode.data[1].imageUrl and JSON_Decode.data[1].state == "Alprazolamleted" then task.wait()
 		local en = JSON_Decode.data[1].imageUrl;
 
 		writefile(cache_path , game:HttpGet(en));
@@ -6193,18 +6193,18 @@ function Alprazolam:SetTheme(name)
 		};
 	elseif name == "Default" then
 		Alprazolam.Colors = {
-			Highlight = Color3.fromRGB(167, 139, 250),
-			Toggle = Color3.fromRGB(139, 92, 246),
-			Risky = Color3.fromRGB(251, 255, 39),
-			BGDBColor = Color3.fromRGB(22, 24, 29),
-			BlockColor = Color3.fromRGB(28, 29, 34),
-			StrokeColor = Color3.fromRGB(37, 38, 43),
+			Highlight = Color3.fromRGB(250, 139, 139),
+			Toggle = Color3.fromRGB(246, 92, 92),
+			Risky = Color3.fromRGB(255, 212, 39),
+			BGDBColor = Color3.fromRGB(29, 22, 22),
+			BlockColor = Color3.fromRGB(34, 28, 28),
+			StrokeColor = Color3.fromRGB(43, 37, 37),
 			SwitchColor = Color3.fromRGB(255, 255, 255),
-			DropColor = Color3.fromRGB(33, 35, 39),
-			MouseEnter = Color3.fromRGB(55, 58, 65),
-			BlockBackground = Color3.fromRGB(39, 40, 47),
+			DropColor = Color3.fromRGB(39, 33, 33),
+			MouseEnter = Color3.fromRGB(65, 55, 55),
+			BlockBackground = Color3.fromRGB(47, 39, 39),
 			LineColor = Color3.fromRGB(65, 65, 65),
-			HighStrokeColor = Color3.fromRGB(55, 56, 63),
+			HighStrokeColor = Color3.fromRGB(63, 55, 55),
 		};
 	elseif name == "Dark Blue" then
 		Alprazolam.Colors = {
@@ -6354,7 +6354,7 @@ function Alprazolam.new(Config : Window)
 	end;
 
 	Config = Alprazolam.__CONFIG(Config , {
-		Name = "COMPKILLER",
+		Name = "Alprazolam",
 		Keybind = "Insert",
 		Logo = Alprazolam.Logo;
 		Scale = Alprazolam.Scale.Window,
@@ -6386,7 +6386,7 @@ function Alprazolam.new(Config : Window)
 	local TabFrame = Instance.new("Frame")
 	local UICorner_2 = Instance.new("UICorner")
 	local LineFrame1 = Instance.new("Frame")
-	local CompLogo = Instance.new("ImageLabel")
+	local AlprazolamLogo = Instance.new("ImageLabel")
 	local WindowLabel = Instance.new("TextLabel")
 	local TabButtons = Instance.new("Frame")
 	local SelectionFrame = Instance.new("Frame")
@@ -6486,20 +6486,20 @@ function Alprazolam.new(Config : Window)
 	LineFrame1.Position = UDim2.new(1, -5, 0, 0)
 	LineFrame1.Size = UDim2.new(0, 20, 1, 0)
 
-	CompLogo.Name = Alprazolam:_RandomString()
-	CompLogo.Parent = TabFrame
-	CompLogo.BackgroundTransparency = 1.000
-	CompLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-	CompLogo.BorderSizePixel = 0
-	CompLogo.Position = UDim2.new(0, 9, 0, 7)
-	CompLogo.Size = UDim2.new(0, 45, 0, 45)
-	CompLogo.Image = Config.Logo
+	AlprazolamLogo.Name = Alprazolam:_RandomString()
+	AlprazolamLogo.Parent = TabFrame
+	AlprazolamLogo.BackgroundTransparency = 1.000
+	AlprazolamLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+	AlprazolamLogo.BorderSizePixel = 0
+	AlprazolamLogo.Position = UDim2.new(0, 9, 0, 7)
+	AlprazolamLogo.Size = UDim2.new(0, 45, 0, 45)
+	AlprazolamLogo.Image = Config.Logo
 	
 	if Alprazolam.CustomHighlightMode then
-		CompLogo.ImageColor3 = Alprazolam.Colors.Highlight;
+		AlprazolamLogo.ImageColor3 = Alprazolam.Colors.Highlight;
 		
 		table.insert(Alprazolam.Elements.Highlight , {
-			Element = CompLogo,
+			Element = AlprazolamLogo,
 			Property = 'ImageColor3'
 		});
 	end;
@@ -6693,7 +6693,7 @@ function Alprazolam.new(Config : Window)
 				Position = UDim2.new(0.5, 0, 0.5, 0)
 			})
 
-			Alprazolam:_Animation(CompLogo,TweenInfo.new(0.2),{
+			Alprazolam:_Animation(AlprazolamLogo,TweenInfo.new(0.2),{
 				ImageTransparency = 0
 			})
 
@@ -6735,7 +6735,7 @@ function Alprazolam.new(Config : Window)
 				Size = UDim2.new(0, 1, 1, 0)
 			})
 
-			Alprazolam:_Animation(CompLogo,TweenInfo.new(0.2),{
+			Alprazolam:_Animation(AlprazolamLogo,TweenInfo.new(0.2),{
 				ImageTransparency = 1
 			})
 
@@ -9620,7 +9620,7 @@ function Alprazolam.new(Config : Window)
 			local Logo = Instance.new("Frame")
 			local UICorner_2 = Instance.new("UICorner")
 			local Frame = Instance.new("Frame")
-			local CompLogo = Instance.new("ImageLabel")
+			local AlprazolamLogo = Instance.new("ImageLabel")
 			local WaternarkList = Instance.new("Frame")
 			local UIListLayout = Instance.new("UIListLayout")
 
@@ -9681,23 +9681,23 @@ function Alprazolam.new(Config : Window)
 				Property = "BackgroundColor3"
 			});
 
-			CompLogo.Name = Alprazolam:_RandomString()
-			CompLogo.Parent = Logo
-			CompLogo.AnchorPoint = Vector2.new(0.5, 0.5)
-			CompLogo.BackgroundTransparency = 1.000
-			CompLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			CompLogo.BorderSizePixel = 0
-			CompLogo.Position = UDim2.new(0.5, -2, 0.5, 0)
-			CompLogo.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
-			CompLogo.SizeConstraint = Enum.SizeConstraint.RelativeYY
-			CompLogo.ZIndex = 159
-			CompLogo.Image = Config.Logo
+			AlprazolamLogo.Name = Alprazolam:_RandomString()
+			AlprazolamLogo.Parent = Logo
+			AlprazolamLogo.AnchorPoint = Vector2.new(0.5, 0.5)
+			AlprazolamLogo.BackgroundTransparency = 1.000
+			AlprazolamLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			AlprazolamLogo.BorderSizePixel = 0
+			AlprazolamLogo.Position = UDim2.new(0.5, -2, 0.5, 0)
+			AlprazolamLogo.Size = UDim2.new(0.800000012, 0, 0.800000012, 0)
+			AlprazolamLogo.SizeConstraint = Enum.SizeConstraint.RelativeYY
+			AlprazolamLogo.ZIndex = 159
+			AlprazolamLogo.Image = Config.Logo
 			
 			if Alprazolam.CustomHighlightMode then
-				CompLogo.ImageColor3 = Alprazolam.Colors.Highlight;
+				AlprazolamLogo.ImageColor3 = Alprazolam.Colors.Highlight;
 
 				table.insert(Alprazolam.Elements.Highlight , {
-					Element = CompLogo,
+					Element = AlprazolamLogo,
 					Property = 'ImageColor3'
 				});
 			end;
@@ -9906,7 +9906,7 @@ function Alprazolam.new(Config : Window)
 		end;
 
 		UserText.Text = config.Username;
-		CompLogo.Image = config.Logo;
+		AlprazolamLogo.Image = config.Logo;
 		ExpireText.Text = config.ExpireDate;
 		WindowLabel.Text = config.WindowName;
 		UserProfile.Image = config.UserProfile;
@@ -10447,7 +10447,7 @@ function Alprazolam.newNotify()
 			local BlockFrame = Instance.new("Frame")
 			local NotifyFrame = Instance.new("Frame")
 			local UICorner = Instance.new("UICorner")
-			local CompLogo = Instance.new("ImageLabel")
+			local AlprazolamLogo = Instance.new("ImageLabel")
 			local Header = Instance.new("TextLabel")
 			local Body = Instance.new("TextLabel")
 			local TimeLeftFrame = Instance.new("Frame")
@@ -10482,24 +10482,24 @@ function Alprazolam.newNotify()
 			UICorner.CornerRadius = UDim.new(0, 4)
 			UICorner.Parent = NotifyFrame
 
-			CompLogo.Name = Alprazolam:_RandomString()
-			CompLogo.Parent = NotifyFrame
-			CompLogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-			CompLogo.BackgroundTransparency = 1.000
-			CompLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
-			CompLogo.BorderSizePixel = 0
-			CompLogo.Position = UDim2.new(0, 6, 0, 6)
-			CompLogo.Size = UDim2.new(0, 25, 0, 25)
-			CompLogo.ZIndex = 4
+			AlprazolamLogo.Name = Alprazolam:_RandomString()
+			AlprazolamLogo.Parent = NotifyFrame
+			AlprazolamLogo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			AlprazolamLogo.BackgroundTransparency = 1.000
+			AlprazolamLogo.BorderColor3 = Color3.fromRGB(0, 0, 0)
+			AlprazolamLogo.BorderSizePixel = 0
+			AlprazolamLogo.Position = UDim2.new(0, 6, 0, 6)
+			AlprazolamLogo.Size = UDim2.new(0, 25, 0, 25)
+			AlprazolamLogo.ZIndex = 4
 
 			if string.find(Notify.Icon,'cache-ck-',1,true) then	
-				CompLogo.Image = Notify.Icon;
+				AlprazolamLogo.Image = Notify.Icon;
 			else
-				CompLogo.Image = Alprazolam:_GetIcon(Notify.Icon);
+				AlprazolamLogo.Image = Alprazolam:_GetIcon(Notify.Icon);
 			end;
 
 			if Alprazolam.CustomHighlightMode then
-				CompLogo.ImageColor3 = Alprazolam.Colors.Highlight;
+				AlprazolamLogo.ImageColor3 = Alprazolam.Colors.Highlight;
 			end;
 			
 			Header.Name = Alprazolam:_RandomString()
