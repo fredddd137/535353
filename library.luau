@@ -1,18 +1,3 @@
---[[
-    		Alprazolam Interface
-
-    Author: 4lpaca
-    License: MIT
-    Github: https://github.com/alprazolam-ui
-    Original: alprazolam.ui
-
-        Version: 2.6
-    - Improved Performance Mode
-    	Alprazolam:OptimizeMode(< boolean >)
-  	- Added Auto Color Logo
-		Alprazolam:CustomIconHighlight()
---]]
-
 --- Export Types ---
 
 export type cloneref = (target: Instance) -> Instance;
@@ -6339,7 +6324,7 @@ function Alprazolam.new(Config : Window)
 		WindowArgs.AlwayShowTab = true;
 	end;
 
-	local Alprazolam = Instance.new("ScreenGui")
+	local WindowGui = Instance.new("ScreenGui")
 	local MainFrame = Instance.new("Frame")
 	local UICorner = Instance.new("UICorner")
 	local TabFrame = Instance.new("Frame")
@@ -6359,27 +6344,27 @@ function Alprazolam.new(Config : Window)
 	local ExpireText = Instance.new("TextLabel")
 	local TabMainFrame = Instance.new("Frame")
 
-	Alprazolam:_DrawKeybinds(Alprazolam);
+	Alprazolam:_DrawKeybinds(WindowGui);
 
 	UIListLayout:GetPropertyChangedSignal('AbsoluteContentSize'):Connect(function()
 		TabButtonScrollingFrame.CanvasSize = UDim2.fromOffset(0,UIListLayout.AbsoluteContentSize.Y)
 	end);
 
-	Alprazolam.Name = "u?name=alprazolam_?"..Alprazolam:_RandomString();
-	Alprazolam.Parent = CoreGui;
-	Alprazolam.ResetOnSpawn = false
-	Alprazolam.IgnoreGuiInset = true;
-	Alprazolam.ZIndexBehavior = Enum.ZIndexBehavior.Global;
+	WindowGui.Name = "u?name=alprazolam_?"..Alprazolam:_RandomString();
+	WindowGui.Parent = CoreGui;
+	WindowGui.ResetOnSpawn = false
+	WindowGui.IgnoreGuiInset = true;
+	WindowGui.ZIndexBehavior = Enum.ZIndexBehavior.Global;
 
-	Alprazolam.ProtectGui(Alprazolam);
+	Alprazolam.ProtectGui(WindowGui);
 
-	WindowArgs.Root = Alprazolam;
+	WindowArgs.Root = WindowGui;
 
-	table.insert(Alprazolam.Windows , Alprazolam);
+	table.insert(Alprazolam.Windows , WindowGui);
 
 	MainFrame.Active = true;
 	MainFrame.Name = Alprazolam:_RandomString()
-	MainFrame.Parent = Alprazolam
+	MainFrame.Parent = WindowGui
 	MainFrame.AnchorPoint = Vector2.new(0.5, 0.5)
 	MainFrame.BackgroundColor3 = Alprazolam.Colors.BGDBColor
 
@@ -6786,7 +6771,7 @@ function Alprazolam.new(Config : Window)
 		local ImageLabel = Instance.new("ImageLabel")
 
 		UserSettings.Name = Alprazolam:_RandomString()
-		UserSettings.Parent = Alprazolam;
+		UserSettings.Parent = WindowGui;
 		UserSettings.BackgroundColor3 = Alprazolam.Colors.BGDBColor;
 		UserSettings.BackgroundTransparency = 1
 		UserSettings.BorderColor3 = Color3.fromRGB(0, 0, 0)
