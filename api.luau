@@ -1,3 +1,18 @@
+--[[
+    		Alprazolam Interface
+
+    Author: 4lpaca
+    License: MIT
+    Github: https://github.com/alprazolam-ui
+    Original: alprazolam.ui
+
+        Version: 2.6
+    - Improved Performance Mode
+    	Alprazolam:OptimizeMode(< boolean >)
+  	- Added Auto Color Logo
+		Alprazolam:CustomIconHighlight()
+--]]
+
 --- Export Types ---
 
 export type cloneref = (target: Instance) -> Instance;
@@ -10260,21 +10275,21 @@ function Alprazolam:ConfigManager(ConfigManager: ConfigManager) : ConfigFunction
 end;
 
 function Alprazolam:Loader(IconId,Duration)
-	local Alprazolam = Instance.new("ScreenGui")
+	local LoaderGui = Instance.new("ScreenGui")
 
-	Alprazolam.Name = Alprazolam:_RandomString()
-	Alprazolam.Parent = CoreGui
-	Alprazolam.Enabled = true
-	Alprazolam.ResetOnSpawn = false
-	Alprazolam.IgnoreGuiInset = true
-	Alprazolam.ZIndexBehavior = Enum.ZIndexBehavior.Global
+	LoaderGui.Name = Alprazolam:_RandomString()
+	LoaderGui.Parent = CoreGui
+	LoaderGui.Enabled = true
+	LoaderGui.ResetOnSpawn = false
+	LoaderGui.IgnoreGuiInset = true
+	LoaderGui.ZIndexBehavior = Enum.ZIndexBehavior.Global
 
 	local Loader = Instance.new("Frame")
 	local Icon = Instance.new("ImageLabel")
 	local Vignette = Instance.new("ImageLabel")
 
 	Loader.Name = Alprazolam:_RandomString()
-	Loader.Parent = Alprazolam
+	Loader.Parent = LoaderGui
 	Loader.AnchorPoint = Vector2.new(0.5, 0.5)
 	Loader.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 	Loader.BackgroundTransparency = 1
@@ -10346,7 +10361,7 @@ function Alprazolam:Loader(IconId,Duration)
 				task.wait(0.2)
 
 				task.delay(3,function()
-					Alprazolam:Destroy();
+					LoaderGui:Destroy();
 				end)
 			end)
 
